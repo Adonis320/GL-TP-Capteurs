@@ -7,7 +7,7 @@
 *************************************************************************/
 
 //---------- Interface de la classe <Xxx> (fichier Xxx.h) ----------------
-#if ! defined ( CONTROLEUR_H )
+#if ! defined ( XXX_H )
 #define XXX_H
 
 //--------------------------------------------------- Interfaces utilisées
