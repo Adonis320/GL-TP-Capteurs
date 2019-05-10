@@ -1,0 +1,92 @@
+/*************************************************************************
+                           Xxx  -  description
+                             -------------------
+    début                : $DATE$
+    copyright            : (C) $YEAR$ par $AUTHOR$
+    e-mail               : $EMAIL$
+*************************************************************************/
+
+//---------- Réalisation de la classe <TypeMesure> (fichier Xxx.cpp) ------------
+
+//---------------------------------------------------------------- INCLUDE
+
+//-------------------------------------------------------- Include système
+#include <iostream>
+using namespace std;
+
+//------------------------------------------------------ Include personnel
+#include "TypeMesure.h"
+
+//------------------------------------------------------------- Constantes
+
+//----------------------------------------------------------------- PUBLIC
+
+//----------------------------------------------------- Méthodes publiques
+// type Xxx::Méthode ( liste des paramètres )
+// Algorithme :
+//
+//{
+//} //----- Fin de Méthode
+
+    string TypeMesure::getUnite(){
+        return unite;
+    }
+
+    string TypeMesure::getDescription(){
+        return description;
+    }
+
+    string TypeMesure::getId(){
+        return id;
+    }
+
+    string TypeMesure::toString(){
+        string texte = id +", "+ description+", "+unite;
+        return texte;
+    }
+//------------------------------------------------- Surcharge d'opérateurs
+/*Xxx & Xxx::operator = ( const Xxx & unXxx )
+// Algorithme :
+//
+{
+} //----- Fin de operator =
+*/
+
+//-------------------------------------------- Constructeurs - destructeur
+/*TypeMesure::TypeMesure ( const Xxx & unXxx )
+// Algorithme :
+//
+{
+#ifdef MAP
+    cout << "Appel au constructeur de copie de <Xxx>" << endl;
+#endif
+} //----- Fin de Xxx (constructeur de copie)
+*/
+
+TypeMesure::TypeMesure (string uni, string desc, string ide)
+// Algorithme :
+//
+{
+#ifdef MAP
+    cout << "Appel au constructeur de <Xxx>" << endl;
+#endif
+    unite = uni;
+    description = desc;
+    id = ide;
+} //----- Fin de Xxx
+
+
+TypeMesure::~TypeMesure ( )
+// Algorithme :
+//
+{
+#ifdef MAP
+    cout << "Appel au destructeur de <Xxx>" << endl;
+#endif
+} //----- Fin de ~Xxx
+
+
+//------------------------------------------------------------------ PRIVE
+
+//----------------------------------------------------- Méthodes protégées
+
