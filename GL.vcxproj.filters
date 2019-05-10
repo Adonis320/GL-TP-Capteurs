@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="source\Capteur.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Controleur.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\LecteurFichier.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Mesure.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Module.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Point.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\SClasse.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\TypeMesure.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="source\Capteur.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Controleur.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\LecteurFichier.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Main.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Mesure.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Module.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Point.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\SClasse.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\TypeMesure.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include=".vscode\ipch\1f7378deb118a202\mmap_address.bin">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include=".vscode\ipch\383593ce330b4fd2\mmap_address.bin">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include=".vscode\ipch\3dce1cd10afb1e0e\mmap_address.bin">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include=".vscode\ipch\518ecde49a0f3a1f\mmap_address.bin">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include=".vscode\ipch\53c739d52970d91a\mmap_address.bin">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include=".vscode\ipch\585d825ff6c1796f\mmap_address.bin">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include=".vscode\ipch\6bffeb401d1e2de9\mmap_address.bin">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include=".vscode\ipch\7580e87140aaf633\mmap_address.bin">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include=".vscode\ipch\8ad7d13706160935\mmap_address.bin">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include=".vscode\ipch\9d486469cfa4c1a1\mmap_address.bin">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include=".vscode\ipch\a6c3da50361ee7b7\mmap_address.bin">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include=".vscode\ipch\ba7db2c439736ae7\mmap_address.bin">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include=".vscode\ipch\c1b3f7235d71f358\mmap_address.bin">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include=".vscode\ipch\ca5c0e52dffdd6a8\mmap_address.bin">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include=".vscode\ipch\dec5e013bef5b7c2\mmap_address.bin">
+      <Filter>Resource Files</Filter>
+    </None>
+  </ItemGroup>
+</Project>

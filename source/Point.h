@@ -38,7 +38,7 @@ public:
     double getLongitude();
 
 //------------------------------------------------- Surcharge d'opérateurs
-    Point & operator = (Point & unPoint );
+    Point & operator = (const Point & unPoint );
     // Mode d'emploi :
     //
     // Contrat :
@@ -51,6 +51,7 @@ public:
     //
     // Contrat :
     //
+
 
     Point (double lat, double longi);
     // Mode d'emploi :

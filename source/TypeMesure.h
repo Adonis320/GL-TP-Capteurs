@@ -35,13 +35,13 @@ public:
     //
     // Contrat :
     //
-    string getUnite();
+    string getUnite() const;
 
-    string getDescription();
+    string getDescription() const;
     
-    string getId();
+    string getId() const;
 
-    string toString();
+    string toString() const;
 //------------------------------------------------- Surcharge d'opérateurs
     //Xxx & operator = ( const Xxx & unXxx );
     // Mode d'emploi :
