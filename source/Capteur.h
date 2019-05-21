@@ -7,7 +7,7 @@
 *************************************************************************/
 
 //---------- Interface de la classe <Xxx> (fichier Xxx.h) ----------------
-#if ! defined ( CAPTEUR_H )
+#if !defined(CAPTEUR_H)
 #define CAPTEUR_H
 
 //--------------------------------------------------- Interfaces utilisées
@@ -28,23 +28,41 @@ using namespace std;
 
 class Capteur
 {
-//----------------------------------------------------------------- PUBLIC
+    //----------------------------------------------------------------- PUBLIC
 
 public:
-//----------------------------------------------------- Méthodes publiques
+    //----------------------------------------------------- Méthodes publiques
     string getId();
     // Mode d'emploi :
     //
     // Contrat :
     //
-    
+
     string getDescription();
     // Mode d'emploi :
     //
     // Contrat :
     //
 
-    Point& getPosition();
+    Point &getPosition();
+    // Mode d'emploi :
+    //
+    // Contrat :
+    //
+
+    bool getEtat();
+    // Mode d'emploi :
+    //
+    // Contrat :
+    //
+
+    double getMesure(string date, TypeMesure type);
+    // Mode d'emploi :
+    //
+    // Contrat :
+    //
+
+    double calculMoyennePeriode(string dateDebut, string dateFin, TypeMesure type);
     // Mode d'emploi :
     //
     // Contrat :
@@ -56,49 +74,46 @@ public:
     // Contrat :
     //
 
-//------------------------------------------------- Surcharge d'opérateurs
-    Capteur & operator = (Capteur & unCapteur );
+    //------------------------------------------------- Surcharge d'opérateurs
+    Capteur &operator=(Capteur &unCapteur);
     // Mode d'emploi :
     //
     // Contrat :
     //
 
-
-//-------------------------------------------- Constructeurs - destructeur
-  //  Xxx ( const Xxx & unXxx );
+    //-------------------------------------------- Constructeurs - destructeur
+    //  Xxx ( const Xxx & unXxx );
     // Mode d'emploi (constructeur de copie) :
     //
     // Contrat :
     //
 
-    Capteur (string ide, string desc, double lon, double lat);
+    Capteur(string ide, string desc, double lon, double lat);
     // Mode d'emploi :
     //
     // Contrat :
     //
 
-    virtual ~Capteur ( );
+    virtual ~Capteur();
     // Mode d'emploi :
     //
     // Contrat :
     //
 
-//------------------------------------------------------------------ PRIVE
+    //------------------------------------------------------------------ PRIVE
 
 protected:
-//----------------------------------------------------- Méthodes protégées
+    //----------------------------------------------------- Méthodes protégées
 
-//----------------------------------------------------- Attributs protégés
+    //----------------------------------------------------- Attributs protégés
     string id;
     string description;
     bool etat;
     Point position;
 
-    map <string,map<string,Mesure>> listeMesures;
-
+    map<string, map<string, Mesure>> listeMesures;
 };
 
 //-------------------------------- Autres définitions dépendantes de <Xxx>
 
 #endif // XXX_H
-

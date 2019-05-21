@@ -28,26 +28,106 @@ using namespace std;
 //{
 //} //----- Fin de Méthode
 
-void Capteur::ajouterMesure(Mesure mesure){
-    map<string,map<string,Mesure>>::iterator position;
+void Capteur::ajouterMesure(Mesure mesure)
+{
+    map<string, map<string, Mesure>>::iterator ite1;
 
-    position = listeMesures.find(mesure.getType());
-    if(position == listeMesures.end()){
-        listeMesures.insert(make_pair(mesure.getType(),))
+    map<string, Mesure>::iterator ite2;
+
+    ite1 = listeMesures.find(mesure.getType()->getId());
+    if (ite1 == listeMesures.end())
+    {
+        map<string, Mesure> mapMes;
+        mapMes.insert(make_pair(mesure.getDate(), mesure));
+        listeMesures.insert(make_pair(mesure.getType()->getId(), mapMes));
+    }
+    else
+    {
+        ite1->second.insert(make_pair(mesure.getDate(), mesure));
     }
 }
 
+double Capteur::getMesure(string date, TypeMesure type)
+{
+    double valeur = 0;
+    //ATTENTION IL N Y A PAS DE DATE EXACTE FAUT QU'ON SE DEMERDE AUSSI POUR CONVERTIR DATE EN STRING OU UN TRUC DU GENRE
+    map<string, map<string, Mesure>>::iterator ite1;
+
+    map<string, Mesure>::iterator ite2;
+
+    ite1 = listeMesures.find(type.getId());
+    if (ite1 != listeMesures.end())
+    {
+        for (ite2 = ite1->second.begin(); ite2 != ite1->second.end(); ite2++)
+        {
+            if (ite2->first.compare(date) == 0)
+            {
+                valeur = ite2->second.getValue();
+            }
+        }
+    }
+
+    return valeur;
+}
+
+double Capteur::calculMoyennePeriode(string dateDebut, string dateFin, TypeMesure type)
+{
+    double moyenne = 0;
+    double compteur = 0;
+    //ATTENTION !!! ON NE PEUT PAS COMPARER DES DATES EN ETANT DES STRING.... FAUT SE DEMERDER AUSSI
+    map<string, map<string, Mesure>>::iterator ite1;
+
+    map<string, Mesure>::iterator ite2;
+
+    ite1 = listeMesures.find(type.getId());
+
+    if (ite1 != listeMesures.end())
+    {
+        for (ite2 = ite1->second.begin(); ite2 != ite1->second.end(); ite2++)
+        {
+            if (ite2->first > dateDebut && ite2->first < dateFin)
+            {
+                moyenne = moyenne + ite2->second.getValue();
+                compteur++;
+            }
+        }
+    }
+    if (compteur == 0)
+    {
+        return 0;
+    }
+    else
+    {
+        return moyenne / compteur;
+    }
+}
+
+string Capteur::getId()
+{
+    return id;
+}
+
+bool Capteur::getEtat()
+{
+    return etat;
+}
+
+string Capteur::getDescription()
+{
+    return description;
+}
+
 //------------------------------------------------- Surcharge d'opérateurs
-Capteur & Capteur::operator = (Capteur & unCapteur )
+Capteur &Capteur::operator=(Capteur &unCapteur)
 // Algorithme :
 //
 {
-	id = unCapteur.id;
+    id = unCapteur.id;
+    etat = true; //on suppose qu'il fonctionne
     description = unCapteur.description;
     position = unCapteur.position;
     return *this;
 } //----- Fin de operator =
-
 
 //-------------------------------------------- Constructeurs - destructeur
 /*Xxx::Xxx ( const Xxx & unXxx )
@@ -60,7 +140,7 @@ Capteur & Capteur::operator = (Capteur & unCapteur )
 } //----- Fin de Xxx (constructeur de copie)
 */
 
-Capteur::Capteur (string ide, string desc, double lon, double lat) : position(lat,lon)
+Capteur::Capteur(string ide, string desc, double lon, double lat) : position(lat, lon)
 // Algorithme :
 //
 {
@@ -73,8 +153,7 @@ Capteur::Capteur (string ide, string desc, double lon, double lat) : position(la
     description = desc;
 } //----- Fin de Capteur
 
-
-Capteur::~Capteur ( )
+Capteur::~Capteur()
 // Algorithme :
 //
 {
@@ -83,8 +162,6 @@ Capteur::~Capteur ( )
 #endif
 } //----- Fin de ~Capteur
 
-
 //------------------------------------------------------------------ PRIVE
 
 //----------------------------------------------------- Méthodes protégées
-
