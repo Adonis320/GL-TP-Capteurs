@@ -32,10 +32,10 @@ double Point::getLongitude(){
 }
 //------------------------------------------------- Surcharge d'opérateurs
 
-Point & Point::operator = (Point & unPoint)
+Point & Point::operator = (const Point & unPoint)
 {
-    latitude = unPoint.getLatitude();
-    longitude = unPoint.getLongitude();
+    latitude = unPoint.latitude;
+    longitude = unPoint.longitude;
     return *this;
 }
 

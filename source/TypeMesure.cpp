@@ -28,19 +28,19 @@ using namespace std;
 //{
 //} //----- Fin de Méthode
 
-    string TypeMesure::getUnite(){
+    string TypeMesure::getUnite() const{
         return unite;
     }
 
-    string TypeMesure::getDescription(){
+    string TypeMesure::getDescription() const{
         return description;
     }
 
-    string TypeMesure::getId(){
+    string TypeMesure::getId() const{
         return id;
     }
 
-    string TypeMesure::toString(){
+    string TypeMesure::toString() const{
         string texte = id +", "+ description+", "+unite;
         return texte;
     }
@@ -68,12 +68,12 @@ TypeMesure::TypeMesure (string uni, string desc, string ide)
 //
 {
 #ifdef MAP
-    cout << "Appel au constructeur de <Xxx>" << endl;
+    cout << "Appel au constructeur de <TypeMesure>" << endl;
 #endif
     unite = uni;
     description = desc;
     id = ide;
-} //----- Fin de Xxx
+} //----- Fin de TypeMesure
 
 
 TypeMesure::~TypeMesure ( )
@@ -81,9 +81,9 @@ TypeMesure::~TypeMesure ( )
 //
 {
 #ifdef MAP
-    cout << "Appel au destructeur de <Xxx>" << endl;
+    cout << "Appel au destructeur de <TypeMesure>" << endl;
 #endif
-} //----- Fin de ~Xxx
+} //----- Fin de ~TypeMesure
 
 
 //------------------------------------------------------------------ PRIVE

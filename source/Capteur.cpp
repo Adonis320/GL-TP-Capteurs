@@ -42,9 +42,9 @@ Capteur & Capteur::operator = (Capteur & unCapteur )
 // Algorithme :
 //
 {
-    id = unCapteur.getId();
-    description = unCapteur.getDescription();
-    position = unCapteur.getPosition();
+	id = unCapteur.id;
+    description = unCapteur.description;
+    position = unCapteur.position;
     return *this;
 } //----- Fin de operator =
 
@@ -66,12 +66,12 @@ Capteur::Capteur (string ide, string desc, double lon, double lat) : position(la
 {
 
 #ifdef MAP
-    cout << "Appel au constructeur de <Xxx>" << endl;
+    cout << "Appel au constructeur de <Capteur>" << endl;
 #endif
 
     id = ide;
     description = desc;
-} //----- Fin de Xxx
+} //----- Fin de Capteur
 
 
 Capteur::~Capteur ( )
@@ -79,9 +79,9 @@ Capteur::~Capteur ( )
 //
 {
 #ifdef MAP
-    cout << "Appel au destructeur de <Xxx>" << endl;
+    cout << "Appel au destructeur de <Capteur>" << endl;
 #endif
-} //----- Fin de ~Xxx
+} //----- Fin de ~Capteur
 
 
 //------------------------------------------------------------------ PRIVE
