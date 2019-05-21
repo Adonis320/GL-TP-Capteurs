@@ -28,9 +28,17 @@ using namespace std;
 //{
 //} //----- Fin de Méthode
 
+void Capteur::ajouterMesure(Mesure mesure){
+    map<string,map<string,Mesure>>::iterator position;
+
+    position = listeMesures.find(mesure.getType());
+    if(position == listeMesures.end()){
+        listeMesures.insert(make_pair(mesure.getType(),))
+    }
+}
 
 //------------------------------------------------- Surcharge d'opérateurs
-Capteur & Capteur::operator = ( const Capteur & unCapteur )
+Capteur & Capteur::operator = (Capteur & unCapteur )
 // Algorithme :
 //
 {

@@ -13,6 +13,8 @@
 //--------------------------------------------------- Interfaces utilisées
 #include <string>
 #include "Point.h"
+#include <map>
+#include "Mesure.h"
 using namespace std;
 //------------------------------------------------------------- Constantes
 
@@ -48,8 +50,14 @@ public:
     // Contrat :
     //
 
+    void ajouterMesure(Mesure mesure);
+    // Mode d'emploi :
+    //
+    // Contrat :
+    //
+
 //------------------------------------------------- Surcharge d'opérateurs
-    Capteur & operator = ( const Capteur unCapteur );
+    Capteur & operator = (Capteur & unCapteur );
     // Mode d'emploi :
     //
     // Contrat :
@@ -85,6 +93,8 @@ protected:
     string description;
     bool etat;
     Point position;
+
+    map <string,map<string,Mesure>> listeMesures;
 
 };
 

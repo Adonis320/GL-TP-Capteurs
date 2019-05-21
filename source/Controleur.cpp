@@ -6,72 +6,69 @@
     e-mail               : $EMAIL$
 *************************************************************************/
 
-//---------- Interface de la classe <Xxx> (fichier Xxx.h) ----------------
-#if ! defined ( CONTROLEUR_H )
-#define XXX_H
+//---------- Réalisation de la classe <Xxx> (fichier Xxx.cpp) ------------
 
-//--------------------------------------------------- Interfaces utilisées
+//---------------------------------------------------------------- INCLUDE
+
+//-------------------------------------------------------- Include système
+#include <iostream>
+using namespace std;
+
+//------------------------------------------------------ Include personnel
+#include "Controleur.h"
 
 //------------------------------------------------------------- Constantes
 
-//------------------------------------------------------------------ Types
-
-//------------------------------------------------------------------------
-// Rôle de la classe <Xxx>
-//
-//
-//------------------------------------------------------------------------
-
-class Xxx : public Ancetre
-{
 //----------------------------------------------------------------- PUBLIC
 
-public:
 //----------------------------------------------------- Méthodes publiques
-    // type Méthode ( liste des paramètres );
-    // Mode d'emploi :
-    //
-    // Contrat :
-    //
+// type Xxx::Méthode ( liste des paramètres )
+// Algorithme :
+//
+//{
+//} //----- Fin de Méthode
 
 
 //------------------------------------------------- Surcharge d'opérateurs
-    Xxx & operator = ( const Xxx & unXxx );
-    // Mode d'emploi :
-    //
-    // Contrat :
-    //
-
+/*Xxx & Xxx::operator = ( const Xxx & unXxx )
+// Algorithme :
+//
+{
+} //----- Fin de operator =
+*/
 
 //-------------------------------------------- Constructeurs - destructeur
-    Xxx ( const Xxx & unXxx );
-    // Mode d'emploi (constructeur de copie) :
-    //
-    // Contrat :
-    //
+/*Xxx::Xxx ( const Xxx & unXxx )
+// Algorithme :
+//
+{
+#ifdef MAP
+    cout << "Appel au constructeur de copie de <Xxx>" << endl;
+#endif
+} //----- Fin de Xxx (constructeur de copie)
+*/
 
-    Xxx ( );
-    // Mode d'emploi :
-    //
-    // Contrat :
-    //
+Controleur::Controleur ( )
+// Algorithme :
+//
+{
+#ifdef MAP
+    cout << "Appel au constructeur de <Xxx>" << endl;
+#endif
+} //----- Fin de Xxx
 
-    virtual ~Xxx ( );
-    // Mode d'emploi :
-    //
-    // Contrat :
-    //
+
+Controleur::~Controleur ( )
+// Algorithme :
+//
+{
+#ifdef MAP
+    cout << "Appel au destructeur de <Xxx>" << endl;
+#endif
+} //----- Fin de ~Xxx
+
 
 //------------------------------------------------------------------ PRIVE
 
-protected:
 //----------------------------------------------------- Méthodes protégées
-
-//----------------------------------------------------- Attributs protégés
-
-};
-
-//-------------------------------- Autres définitions dépendantes de <Xxx>
-
-#endif // XXX_H
 

@@ -7,11 +7,18 @@
 *************************************************************************/
 
 //---------- Interface de la classe <Xxx> (fichier Xxx.h) ----------------
-#if ! defined ( XXX_H )
-#define XXX_H
+#if ! defined ( CONTROLEUR_H )
+#define CONTROLEUR_H
 
 //--------------------------------------------------- Interfaces utilisées
+#include "Point.h"
+#include "Capteur.h"
+#include "TypeMesure.h"
+#include <iostream>
+#include <string>
+#include <map>
 
+using namespace std;
 //------------------------------------------------------------- Constantes
 
 //------------------------------------------------------------------ Types
@@ -22,7 +29,7 @@
 //
 //------------------------------------------------------------------------
 
-class Xxx : public Ancetre
+class Controleur
 {
 //----------------------------------------------------------------- PUBLIC
 
@@ -33,10 +40,37 @@ public:
     //
     // Contrat :
     //
+    void initTypeMesure();
 
+    string lireTypeMesures();
 
+    string lireListeCapteurs();
+
+    string lireListeCapteursMalfonctionnant();
+
+    void getCapteurRegion(Point p1, Point p2);
+
+    string calculMoyenneSurPeriode(string date1, string date2);
+
+    string calculMoyenneMoment(string date);
+
+    string calculMoyenneSurPeriode(TypeMesure type, string date1, string date2);
+
+    string calculMoyenneMoment(TypeMesure, string date1);
+
+    string getAllMesure(string dateDebut, string dateFin);
+
+    string getMesure(string attributID, string dateDebut, string dateFin);
+
+    double getMoyenne(Capteur capteur);
+
+    double getAtmo(string date);
+
+    void verifierCapteur();
+
+    void changerZoneCapteurs();
 //------------------------------------------------- Surcharge d'opérateurs
-    Xxx & operator = ( const Xxx & unXxx );
+    //Xxx & operator = ( const Xxx & unXxx );
     // Mode d'emploi :
     //
     // Contrat :
@@ -44,19 +78,19 @@ public:
 
 
 //-------------------------------------------- Constructeurs - destructeur
-    Xxx ( const Xxx & unXxx );
+    //Xxx ( const Xxx & unXxx );
     // Mode d'emploi (constructeur de copie) :
     //
     // Contrat :
     //
 
-    Xxx ( );
+    Controleur ( );
     // Mode d'emploi :
     //
     // Contrat :
     //
 
-    virtual ~Xxx ( );
+    virtual ~Controleur ( );
     // Mode d'emploi :
     //
     // Contrat :
@@ -68,7 +102,7 @@ protected:
 //----------------------------------------------------- Méthodes protégées
 
 //----------------------------------------------------- Attributs protégés
-
+    map <string, Capteur> listeCapteurs;
 };
 
 //-------------------------------- Autres définitions dépendantes de <Xxx>
