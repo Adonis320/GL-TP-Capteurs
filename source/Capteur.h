@@ -12,9 +12,11 @@
 
 //--------------------------------------------------- Interfaces utilisées
 #include <string>
+#include "Mesure.h"
 #include "Point.h"
 #include <map>
-#include "Mesure.h"
+#include <cmath>
+#include "TypeMesure.h"
 using namespace std;
 //------------------------------------------------------------- Constantes
 
@@ -44,7 +46,7 @@ public:
     // Contrat :
     //
 
-    Point &getPosition();
+    Point getPosition();
     // Mode d'emploi :
     //
     // Contrat :
@@ -54,25 +56,37 @@ public:
     // Mode d'emploi :
     //
     // Contrat :
-    //
+    // 
 
-    double getMesure(string date, TypeMesure type);
+    void setEtat(bool fonctionne);
+
+    string toString();
+
+    double getMesure(string date, TypeMesure *type);
     // Mode d'emploi :
     //
     // Contrat :
     //
 
-    double calculMoyennePeriode(string dateDebut, string dateFin, TypeMesure type);
+    double calculMoyennePeriode(string dateDebut, string dateFin, TypeMesure *type);
     // Mode d'emploi :
     //
     // Contrat :
     //
 
-    void ajouterMesure(Mesure mesure);
+    double calculMoyenneMoment(string date, TypeMesure * type);
     // Mode d'emploi :
     //
     // Contrat :
     //
+
+    void ajouterMesure(Mesure * mesure);
+    // Mode d'emploi :
+    //
+    // Contrat :
+    //
+
+    double getDistance(Capteur* capteur);
 
     //------------------------------------------------- Surcharge d'opérateurs
     Capteur &operator=(Capteur &unCapteur);
@@ -111,7 +125,7 @@ protected:
     bool etat;
     Point position;
 
-    map<string, map<string, Mesure>> listeMesures;
+    map<string, map<string, Mesure*>> listeMesures;
 };
 
 //-------------------------------- Autres définitions dépendantes de <Xxx>

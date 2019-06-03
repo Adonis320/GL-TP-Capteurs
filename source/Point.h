@@ -11,7 +11,7 @@
 #define POINT_H
 
 //--------------------------------------------------- Interfaces utilisées
-
+using namespace std;
 //------------------------------------------------------------- Constantes
 
 //------------------------------------------------------------------ Types
@@ -33,9 +33,9 @@ public:
     //
     // Contrat :
     //
-    double getLatitude();
+    long double getLatitude();
 
-    double getLongitude();
+    long double getLongitude();
 
 //------------------------------------------------- Surcharge d'opérateurs
     Point & operator = (const Point & unPoint );
@@ -44,7 +44,7 @@ public:
     // Contrat :
     //
 
-
+    string toString();
 //-------------------------------------------- Constructeurs - destructeur
     //Xxx ( const Xxx & unXxx );
     // Mode d'emploi (constructeur de copie) :
@@ -53,7 +53,7 @@ public:
     //
 
 
-    Point (double lat, double longi);
+    Point (long double lat,long double longi);
     // Mode d'emploi :
     //
     // Contrat :
@@ -71,8 +71,8 @@ protected:
 //----------------------------------------------------- Méthodes protégées
 
 //----------------------------------------------------- Attributs protégés
-    double latitude;
-    double longitude;
+    long double latitude;
+    long double longitude;
 };
 
 //-------------------------------- Autres définitions dépendantes de <Xxx>

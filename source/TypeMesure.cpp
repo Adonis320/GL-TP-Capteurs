@@ -36,12 +36,12 @@ using namespace std;
         return description;
     }
 
-    string TypeMesure::getId() const{
+    string TypeMesure::getId() {
         return id;
     }
 
     string TypeMesure::toString() const{
-        string texte = id +", "+ description+", "+unite;
+        string texte = id +", "+ description+", "+unite+"\n";
         return texte;
     }
 //------------------------------------------------- Surcharge d'opérateurs
@@ -63,6 +63,23 @@ using namespace std;
 } //----- Fin de Xxx (constructeur de copie)
 */
 
+TypeMesure &TypeMesure::operator=(TypeMesure &unType)
+// Algorithme :
+//
+{
+    unite = unType.unite;
+    description = unType.description;
+    id = unType.id;
+    return *this;
+} 
+
+TypeMesure::TypeMesure(const TypeMesure & unType)
+{
+    unite = unType.unite;
+    description = unType.description;
+    id = unType.id;
+}
+
 TypeMesure::TypeMesure (string uni, string desc, string ide)
 // Algorithme :
 //
@@ -75,6 +92,10 @@ TypeMesure::TypeMesure (string uni, string desc, string ide)
     id = ide;
 } //----- Fin de TypeMesure
 
+/*TypeMesure::TypeMesure()
+{
+
+}*/
 
 TypeMesure::~TypeMesure ( )
 // Algorithme :

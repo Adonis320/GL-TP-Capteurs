@@ -39,7 +39,7 @@ public:
 
     string getDescription() const;
     
-    string getId() const;
+    string getId() ;
 
     string toString() const;
 //------------------------------------------------- Surcharge d'opérateurs
@@ -56,12 +56,25 @@ public:
     //
     // Contrat :
     //
+    TypeMesure &operator=(TypeMesure &unType);
+    // Mode d'emploi :
+    //
+    // Contrat :
+    //
+    
+    TypeMesure(const TypeMesure & unType);
+	// Mode d'emploi (constructeur de copie) :
+	//
+	// Contrat :
+	//
 
     TypeMesure (string uni,string desc, string ide);
     // Mode d'emploi :
     //
     // Contrat :
     //
+ 
+  //  TypeMesure();
 
     virtual ~TypeMesure ( );
     // Mode d'emploi :

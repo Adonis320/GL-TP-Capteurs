@@ -1,7 +1,7 @@
 /*************************************************************************
 Mesure  -  description
 -------------------
-début                : $DATE$
+dï¿½but                : $DATE$
 copyright            : (C) $YEAR$ par $AUTHOR$
 e-mail               : $EMAIL$
 *************************************************************************/
@@ -10,8 +10,7 @@ e-mail               : $EMAIL$
 #if ! defined ( MESURE_H )
 #define MESURE_H
 
-//--------------------------------------------------- Interfaces utilisées
-#include "Capteur.h"
+//--------------------------------------------------- Interfaces utilisï¿½es
 #include "TypeMesure.h"
 #include <string>
 //------------------------------------------------------------- Constantes
@@ -19,7 +18,7 @@ e-mail               : $EMAIL$
 //------------------------------------------------------------------ Types
 
 //------------------------------------------------------------------------
-// Rôle de la classe <Mesure>
+// Rï¿½le de la classe <Mesure>
 //
 //
 //------------------------------------------------------------------------
@@ -29,7 +28,7 @@ class Mesure
 	//----------------------------------------------------------------- PUBLIC
 
 public:
-	//----------------------------------------------------- Méthodes publiques
+	//----------------------------------------------------- Mï¿½thodes publiques
 
 	string getDate() const;
 	// Mode d'emploi :
@@ -43,13 +42,13 @@ public:
 	// Contrat :
 	//
 
-	const Capteur* getSensor() const;
+	//const Capteur* getSensor() const;
 	// Mode d'emploi :
 	//
 	// Contrat :
 	//
 
-	const TypeMesure* getType() const;
+	TypeMesure* getType();
 	// Mode d'emploi :
 	//
 	// Contrat :
@@ -61,7 +60,7 @@ public:
 	// Contrat :
 	//
 
-	//------------------------------------------------- Surcharge d'opérateurs
+	//------------------------------------------------- Surcharge d'opï¿½rateurs
 	Mesure & operator = (const Mesure & uneMesure);
 	// Mode d'emploi :
 	//
@@ -76,7 +75,7 @@ public:
 	// Contrat :
 	//
 
-	Mesure(double uneValeur, string unedate, Capteur* unCapteur, TypeMesure* untype);
+	Mesure(double uneValeur, string unedate, TypeMesure *untype, string capteur);
 	// Mode d'emploi :
 	//
 	// Contrat :
@@ -91,16 +90,16 @@ public:
 	//------------------------------------------------------------------ PRIVE
 
 protected:
-	//----------------------------------------------------- Méthodes protégées
+	//----------------------------------------------------- Mï¿½thodes protï¿½gï¿½es
 
-	//----------------------------------------------------- Attributs protégés
+	//----------------------------------------------------- Attributs protï¿½gï¿½s
 	double valeur;
 	string date;
-	Capteur capteur;
-	TypeMesure type;
+	string capteurID;
+	TypeMesure *type;
 };
 
-//-------------------------------- Autres définitions dépendantes de <Mesure>
+//-------------------------------- Autres dï¿½finitions dï¿½pendantes de <Mesure>
 
 #endif // MESURE_H
 

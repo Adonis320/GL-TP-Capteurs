@@ -1,16 +1,16 @@
 /*************************************************************************
 Mesure  -  description
 -------------------
-début                : $DATE$
+dï¿½but                : $DATE$
 copyright            : (C) $YEAR$ par $AUTHOR$
 e-mail               : $EMAIL$
 *************************************************************************/
 
-//---------- Réalisation de la classe <Mesure> (fichier Mesure.cpp) ------------
+//---------- Rï¿½alisation de la classe <Mesure> (fichier Mesure.cpp) ------------
 
 //---------------------------------------------------------------- INCLUDE
 
-//-------------------------------------------------------- Include système
+//-------------------------------------------------------- Include systï¿½me
 #include <iostream>
 using namespace std;
 
@@ -21,14 +21,14 @@ using namespace std;
 
 //----------------------------------------------------------------- PUBLIC
 
-//----------------------------------------------------- Méthodes publiques
+//----------------------------------------------------- Mï¿½thodes publiques
 
 string Mesure::toString() const
 // Algorithme :
 //
 {
-	return("Type: " + type.toString() + " valeur: " + to_string(valeur) + " effectuée le " + date + " par " + capteur.toString());
-} //----- Fin de Méthode
+	return("Type: " + type->toString() + "         valeur: " + to_string(valeur) + " effectue le " + date + "\n");// + " par " + capteur.toString());
+} //----- Fin de Mï¿½thode
 
 
 
@@ -37,38 +37,39 @@ string Mesure::getDate() const
 //
 {
 	return date;
-} //----- Fin de Méthode
+} //----- Fin de Mï¿½thode
 
-const TypeMesure* Mesure::getType() const
+TypeMesure* Mesure::getType() 
 // Algorithme :
 //
 {
-	return (&type);
-} //----- Fin de Méthode
+	return (type);
+} //----- Fin de Mï¿½thode
 
 
-const Capteur* Mesure::getSensor() const
+/*const Capteur* Mesure::getSensor() const
 // Algorithme :
 //
 {
 	return (&capteur);
-} //----- Fin de Méthode
+} //----- Fin de Mï¿½thode
+*/
 
 double Mesure::getValue() 
 // Algorithme :
 //
 {
 	return (valeur);
-} //----- Fin de Méthode
+} //----- Fin de Mï¿½thode
 
-//------------------------------------------------- Surcharge d'opérateurs
+//------------------------------------------------- Surcharge d'opï¿½rateurs
 Mesure & Mesure::operator = (const Mesure & uneMesure)
 // Algorithme :
 //
 {
 	valeur = uneMesure.valeur;
 	date = uneMesure.date;
-	capteur = uneMesure.capteur;
+	//capteur = uneMesure.capteur;
 	type = uneMesure.type;
 	return (*this);
 
@@ -85,13 +86,12 @@ Mesure::Mesure(const Mesure & uneMesure)
 #endif
 	valeur = uneMesure.valeur;
 	date = uneMesure.date;
-	capteur = uneMesure.capteur;
+	capteurID = uneMesure.capteurID;
 	type = uneMesure.type;
-
 } //----- Fin de Mesure (constructeur de copie)
 
 
-Mesure::Mesure(double uneValeur, string unedate, Capteur* unCapteur, TypeMesure* untype)
+Mesure::Mesure(double uneValeur, string unedate, TypeMesure *untype, string capteur)
 // Algorithme :
 //
 {
@@ -100,8 +100,8 @@ Mesure::Mesure(double uneValeur, string unedate, Capteur* unCapteur, TypeMesure*
 #endif
 	valeur = uneValeur;
 	date = unedate;
-	capteur = *(unCapteur);
-	type = *(untype);
+	capteurID = capteur;
+	type = untype;
 } //----- Fin de Mesure
 
 
@@ -112,10 +112,11 @@ Mesure::~Mesure()
 #ifdef MAP
 	cout << "Appel au destructeur de <Mesure>" << endl;
 #endif
+	//delete type;
 } //----- Fin de ~Mesure
 
 
   //------------------------------------------------------------------ PRIVE
 
-  //----------------------------------------------------- Méthodes protégées
+  //----------------------------------------------------- Mï¿½thodes protï¿½gï¿½es
 

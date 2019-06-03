@@ -1,7 +1,7 @@
 /*************************************************************************
 LecteurFichier  -  description
 -------------------
-début                : $DATE$
+dï¿½but                : $DATE$
 copyright            : (C) $YEAR$ par $AUTHOR$
 e-mail               : $EMAIL$
 *************************************************************************/
@@ -10,7 +10,7 @@ e-mail               : $EMAIL$
 #if ! defined ( LecteurFichier_H )
 #define LecteurFichier_H
 
-//--------------------------------------------------- Interfaces utilisées
+//--------------------------------------------------- Interfaces utilisï¿½es
 #include <fstream>
 #include <string>
 #include "Point.h"
@@ -23,7 +23,7 @@ using namespace std;
 //------------------------------------------------------------------ Types
 
 //------------------------------------------------------------------------
-// Rôle de la classe <LecteurFichier>
+// Rï¿½le de la classe <LecteurFichier>
 //
 //
 //------------------------------------------------------------------------
@@ -33,7 +33,7 @@ class LecteurFichier
 	//----------------------------------------------------------------- PUBLIC
 
 public:
-	//----------------------------------------------------- Méthodes publiques
+	//----------------------------------------------------- Mï¿½thodes publiques
 	Capteur* getCapteurParRegion(Point point1, Point point2);
 	// Mode d'emploi :
 	//
@@ -46,7 +46,9 @@ public:
 	// Contrat :
 	//
 
-	Mesure* getMesure(string capteurId, string attributId, string dateDebut, string dateFin);
+	void getMesureMethode2(map<string,Capteur*>* mapCapteur, map<string,TypeMesure*>* mapType, string dateDebut, string dateFin);
+
+	Mesure* getMesure(string capteurId, TypeMesure* type, string dateDebut, string dateFin);
 	// Mode d'emploi :
 	//
 	// Contrat :
@@ -76,6 +78,11 @@ public:
 	// Contrat :
 	//
 
+
+	void closeFlux();
+
+	bool good();
+
 	//-------------------------------------------- Constructeurs - destructeur
 	LecteurFichier();
 	// Mode d'emploi :
@@ -88,17 +95,17 @@ public:
 	//
 	// Contrat :
 	//
-
+	ifstream flux;
 	//------------------------------------------------------------------ PRIVE
 
 protected:
-	//----------------------------------------------------- Méthodes protégées
+	//----------------------------------------------------- Mï¿½thodes protï¿½gï¿½es
 
-	//----------------------------------------------------- Attributs protégés
-	ifstream flux;
+	//----------------------------------------------------- Attributs protï¿½gï¿½s
+
 };
 
-//-------------------------------- Autres définitions dépendantes de <Xxx>
+//-------------------------------- Autres dï¿½finitions dï¿½pendantes de <Xxx>
 
 #endif // XXX_H
 

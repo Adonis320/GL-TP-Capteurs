@@ -23,12 +23,16 @@ using namespace std;
 
 //----------------------------------------------------- Méthodes publiques
 
-double Point::getLatitude(){
+long double Point::getLatitude(){
     return latitude;
 }
 
-double Point::getLongitude(){
+long double Point::getLongitude(){
     return longitude;
+}
+
+string Point::toString(){
+    return ("Latitude = "+to_string(latitude)+", Longitude = "+to_string(longitude));
 }
 //------------------------------------------------- Surcharge d'opérateurs
 
@@ -41,7 +45,7 @@ Point & Point::operator = (const Point & unPoint)
 
 //-------------------------------------------- Constructeurs - destructeur
 
-Point::Point (double lat,double longi)
+Point::Point (long double lat, long double longi)
 // Algorithme :
 //
 {
